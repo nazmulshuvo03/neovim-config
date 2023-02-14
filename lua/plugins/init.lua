@@ -1,0 +1,8 @@
+require("plugins.lsp_config")
+require("plugins.gruvbox")
+require("plugins.lualine")
+require("plugins.nvim-tree")
+require("plugins.telescope")
+require("plugins.treesitter")
+require("plugins.autopairs")
+require("plugins.tmux_navigator")
