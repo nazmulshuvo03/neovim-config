@@ -1,5 +1,5 @@
 require("plugins.lsp_config")
-require("plugins.gruvbox")
+require("plugins.theme")
 require("plugins.lualine")
 require("plugins.nvim-tree")
 require("plugins.telescope")
