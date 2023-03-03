@@ -14,6 +14,8 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
+
+  use { "bluz71/vim-nightfly-colors", as = "nightfly" }
   
    -- LSP Configuration & Plugins
    use { -- LSP Configuration & Plugins

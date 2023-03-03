@@ -1,5 +1,6 @@
 local servers = {
   clangd = {},
+  tsserver = {}
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
