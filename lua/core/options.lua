@@ -35,3 +35,4 @@ vim.opt.splitbelow = true
 
 vim.opt.iskeyword:append("-")
 
+vim.opt.fillchars = {eob = " "}
