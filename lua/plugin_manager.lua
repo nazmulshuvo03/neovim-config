@@ -54,6 +54,9 @@ return require('packer').startup(function(use)
   -- Auto matching braces
  use "windwp/nvim-autopairs" 
 
+  -- Theme
+  use 'marko-cerovac/material.nvim'
+
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
