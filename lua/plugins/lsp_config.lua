@@ -1,9 +1,16 @@
 local servers = {
-  clangd = {},
+  clangd = {
+    cmd = { "clangd" };
+    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" };
+  },
   rust_analyzer = {
-    cargo = {
-      allFeatures = true,
-    }
+    cmd = { "rust-analyzer" };
+    filetypes = { "rust" };
+    cargo = { allFeatures = true, };
+  },
+  tsserver = {
+    cmd = {bin_name, "--stdio"};
+    filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"};
   },
 }
 
