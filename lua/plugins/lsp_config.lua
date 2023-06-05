@@ -1,6 +1,10 @@
 local servers = {
   clangd = {},
-  rust_analyzer = {},
+  rust_analyzer = {
+    cargo = {
+      allFeatures = true,
+    }
+  },
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers

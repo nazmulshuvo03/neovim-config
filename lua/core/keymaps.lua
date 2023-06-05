@@ -1,6 +1,7 @@
 -- Set leader to <space>
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.g.rustfmt_autosave = 1
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
