@@ -1,8 +1,8 @@
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -14,13 +14,13 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
-  
+
   -- Github Copilot
   use { "zbirenbaum/copilot.lua" }
 
-   -- LSP Configuration & Plugins
-   use { -- LSP Configuration & Plugins
-   'neovim/nvim-lspconfig',
+  -- LSP Configuration & Plugins
+  use { -- LSP Configuration & Plugins
+    'neovim/nvim-lspconfig',
     requires = {
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
@@ -31,11 +31,11 @@ return require('packer').startup(function(use)
     }
   }
 
-  -- Prettier 
+  -- Prettier
   use('jose-elias-alvarez/null-ls.nvim')
   use('MunifTanjim/prettier.nvim')
 
-   -- Autocompletion
+  -- Autocompletion
   use {
     'hrsh7th/nvim-cmp',
     requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
@@ -45,30 +45,30 @@ return require('packer').startup(function(use)
   use {
     "rust-lang/rust.vim",
     ft = "rust",
-    init = function ()
+    init = function()
       vim.g.rustfmt_autosave = 1
     end
   }
-  
+
   -- File management
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    tag = 'nightly'                  -- optional, updated every week. (see issue #1193)
   }
-  
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  
+
   -- Highlight, edit, and navigate code
   use 'nvim-treesitter/nvim-treesitter'
 
   -- Auto matching braces
- use "windwp/nvim-autopairs" 
+  use "windwp/nvim-autopairs"
 
   -- Theme
   use 'marko-cerovac/material.nvim'
@@ -76,11 +76,16 @@ return require('packer').startup(function(use)
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   -- Smooth navigation with tmux
   use 'alexghergh/nvim-tmux-navigation'
+
+  -- Tab system
+  use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+  use 'romgrk/barbar.nvim'
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -88,4 +93,3 @@ return require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
-
