@@ -3,8 +3,36 @@ local null_ls = require("null-ls")
 local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
 local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
+local languages = {
+  "css",
+  "less",
+  "scss",
+  "html",
+  "yaml",
+  "yml",
+  "toml",
+  "javascript",
+  "javascriptreact",
+  "typescript",
+  "typescriptreact",
+  "json",
+  "markdown",
+  "md",
+  "rust",
+  "solidity",
+  "python",
+  "c",
+  "cpp",
+  "lua",
+}
 
 null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.prettier.with({
+      filetypes = languages,
+    }),
+    null_ls.builtins.formatting.stylua,
+  },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.keymap.set("n", "<Leader>f", function()
@@ -35,20 +63,7 @@ local prettier = require("prettier")
 
 prettier.setup({
   bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
-  filetypes = {
-    "css",
-    "graphql",
-    "html",
-    "javascript",
-    "javascriptreact",
-    "json",
-    "less",
-    "markdown",
-    "scss",
-    "typescript",
-    "typescriptreact",
-    "yaml",
-  },
+  filetypes = languages,
   cli_options = {
     trailing_comma = "es5",
     tab_width = 2,
