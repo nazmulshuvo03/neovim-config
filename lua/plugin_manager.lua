@@ -25,11 +25,11 @@ return require('packer').startup(function(use)
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-
-      -- Useful status updates for LSP
-      'j-hui/fidget.nvim',
     }
   }
+
+  -- Useful status updates for LSP
+  use { 'j-hui/fidget.nvim', tag = 'legacy' }
 
   -- Prettier
   use('jose-elias-alvarez/null-ls.nvim')
