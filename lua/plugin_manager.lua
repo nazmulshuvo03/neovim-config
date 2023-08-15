@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
   }
 
   -- Useful status updates for LSP
-  use { 'j-hui/fidget.nvim', tag = 'legacy' }
+  -- use { 'j-hui/fidget.nvim', tag = 'legacy' }
 
   -- Prettier
   use('jose-elias-alvarez/null-ls.nvim')
