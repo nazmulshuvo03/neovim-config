@@ -9,9 +9,13 @@ local servers = {
     cargo = { allFeatures = true, },
   },
   tsserver = {
-    cmd = { bin_name, "--stdio" },
+    cmd = { "typescript-language-server", "--stdio" },
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   },
+  solc = {
+    cmd = { "solc", "--lsp" },
+    filetypes = { "solidity" },
+  }
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
