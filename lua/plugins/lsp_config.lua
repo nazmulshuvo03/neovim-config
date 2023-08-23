@@ -9,7 +9,7 @@ local servers = {
     cargo = { allFeatures = true, },
   },
   tsserver = {
-    cmd = { bin_name, "--stdio" },
+    cmd = { "typescript-language-server", "--stdio" },
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   },
 }
