@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Github Copilot
-  use { "zbirenbaum/copilot.lua" }
+  -- use { "zbirenbaum/copilot.lua" }
 
   -- LSP Configuration & Plugins
   use { -- LSP Configuration & Plugins

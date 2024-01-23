@@ -1,4 +1,4 @@
-require("plugins.copilot")
+-- require("plugins.copilot")
 require("plugins.lsp_config")
 require("plugins.theme")
 require("plugins.lualine")
