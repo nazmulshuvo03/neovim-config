@@ -71,7 +71,8 @@ return require('packer').startup(function(use)
   use "windwp/nvim-autopairs"
 
   -- Theme
-  use 'marko-cerovac/material.nvim'
+  -- use 'marko-cerovac/material.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- Telescope
   use {
