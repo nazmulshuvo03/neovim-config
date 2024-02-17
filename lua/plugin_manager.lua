@@ -42,13 +42,22 @@ return require("packer").startup(function(use)
 	})
 
 	-- Autoformat Rust code
-	use({
-		"rust-lang/rust.vim",
-		ft = "rust",
-		init = function()
-			vim.g.rustfmt_autosave = 1
-		end,
-	})
+	-- use({
+	--   "rust-lang/rust.vim",
+	--   ft = "rust",
+	--   init = function()
+	--     vim.g.rustfmt_autosave = 1
+	--   end,
+	-- })
+
+	-- Rust better experience (updated version of rust-tools.nvim)
+	use("simrat39/rust-tools.nvim")
+
+	-- use({
+	-- 	"mrcjkb/rustaceanvim",
+	-- 	version = "^4", -- Recommended
+	-- 	ft = { "rust" },
+	-- })
 
 	-- File management
 	use({
@@ -89,6 +98,7 @@ return require("packer").startup(function(use)
 	use("lewis6991/gitsigns.nvim") -- OPTIONAL: for git status
 	use("romgrk/barbar.nvim")
 
+	--[[
 	-- Winbar or breadcrumbs like VSCode
 	use({
 		"utilyre/barbecue.nvim",
@@ -114,6 +124,10 @@ return require("packer").startup(function(use)
 			-- "nvim-telescope/telescope.nvim" -- Optional
 		},
 	})
+  ]]
+
+	-- Debug Adapter Plugin ()
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 
 	-- Commenting
 	use("terrortylor/nvim-comment")
