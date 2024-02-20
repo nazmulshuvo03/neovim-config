@@ -1,5 +1,14 @@
---------------------[
----------------------
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+
+local map = vim.keymap.set
+
+map("i", "jj", "<Esc>", { desc = "Change to normal mode from insert mode", noremap = true })
+
+----------------------------------------------------------------------------
+--[=====[ Default Keymaps
+----------------------------------------------------------------------------
 
 -- This file is automatically loaded by lazyvim.config.init
 local Util = require("lazyvim.util")
@@ -173,5 +182,6 @@ map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
----------------------
---------------------]
+----------------------------------------------------------------------------
+--]=====]
+----------------------------------------------------------------------------
