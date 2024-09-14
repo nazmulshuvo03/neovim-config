@@ -15,6 +15,12 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "default",
+      },
+    },
     { import = "plugins" },
   },
   defaults = {
