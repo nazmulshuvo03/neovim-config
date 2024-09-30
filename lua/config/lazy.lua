@@ -21,6 +21,12 @@ require("lazy").setup({
         colorscheme = "default",
       },
     },
+    {
+      "neovim/nvim-lspconfig",
+      opts = {
+        inlay_hints = { enabled = false, exclude = { "js", "ts", "jsx", "tsx" } },
+      },
+    },
     { import = "plugins" },
   },
   defaults = {
