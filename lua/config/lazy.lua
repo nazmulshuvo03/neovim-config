@@ -13,18 +13,33 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "default",
+        colorscheme = "habamax",
       },
     },
     -- import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.ui.alpha" },
+    { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.lang.clangd" },
+    { import = "lazyvim.plugins.extras.lang.rust" },
+    { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
+
     -- import/override with your plugins
     {
       "neovim/nvim-lspconfig",
       opts = {
-        inlay_hints = { enabled = false, exclude = { "js", "ts", "jsx", "tsx" } },
+        inlay_hints = {
+          enabled = false,
+          exclude = { "js", "ts", "jsx", "tsx" },
+        },
+        highlight = {
+          enable = true,
+          disable = { "text" },
+        },
       },
     },
     { import = "plugins" },
