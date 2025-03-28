@@ -5,6 +5,15 @@
 local map = vim.keymap.set
 
 map("i", "jj", "<Esc>", { desc = "Change to normal mode from insert mode", noremap = true })
+map("n", "<leader> wv", "<C-W>v", { desc = "Split window right", noremap = true })
+
+-- Competitive programming keymap
+vim.api.nvim_set_keymap(
+  "n",
+  "<F10>",
+  ":!timeout 4s g++ -std=c++14 -Wall -Wextra -o a a.cpp && ./a < input.txt > output.txt<CR>",
+  { noremap = true, silent = true }
+)
 
 ----------------------------------------------------------------------------
 --[=====[ Default Keymaps
