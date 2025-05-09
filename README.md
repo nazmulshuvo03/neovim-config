@@ -6,24 +6,25 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 ### Ubuntu packages
 
-build-essential
-python
-nodejs
-rust
-unzip
-curl
-lazygit
-nerdfont
-fzf
+- build-essential
+- python
+- nodejs
+- rust
+- unzip
+- curl
+- lazygit
+- nerdfont
+- fzf
+- pipx
 
 ### Python packages globally
 
-pyright
-ruff
-black
-isort
-djlint
+- ruff
+- black
+- isort
+- djlint
 
 ### Nodejs packages globally
 
-prettier
+- pyright
+- prettier
